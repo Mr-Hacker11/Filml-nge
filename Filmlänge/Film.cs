@@ -6,12 +6,12 @@ namespace Filmlänge
 {
     class Film
     {
-        private int Minuten;
-        private int Sekunden;
-        private int Audiospur;
-        private int Videospur;
-        public int ergebnis;
-        private int gesamtspur;
+        private float Minuten;
+        private float Sekunden;
+        private float Audiospur;
+        private float Videospur;
+        public float ergebnis;
+        private float gesamtspur;
 
         public Film()
         {
@@ -22,13 +22,13 @@ namespace Filmlänge
             ergebnis = 0;
             gesamtspur = 0;
         }
-        public void setAudiospur(int audiospur, int videospur)
+        public void setAudiospur(float audiospur, float videospur)
         {
             this.Audiospur = audiospur;
             this.Videospur = videospur;
             
         }
-        public void setgesamtzahl(int minuten, int sekunden)
+        public void setgesamtzahl(float minuten, float sekunden)
         {
            // this.gesamtSpur = Gesamtspur;
               gesamtspur= Audiospur+Videospur;
@@ -40,16 +40,12 @@ namespace Filmlänge
             ergebnis = ergebnis / 1024;
          
         }
-        public int getgesamtzahl()
+        public float getgesamtzahl()
         {
             
             return ergebnis;
         }
 
-        public static implicit operator int(Film v)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 
