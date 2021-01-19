@@ -6,44 +6,47 @@ namespace Filmlänge
 {
     class Film
     {
-        private float Minuten;
         private float Sekunden;
-        private float Audiospur;
-        private float Videospur;
         public float ergebnis;
-        private float gesamtspur;
+        private float bitrate;
+        private float zeit;
 
         public Film()
         {
-            this.Minuten = 0;
             this.Sekunden = 0;
-            this.Audiospur = 0;
-            this.Videospur = 0;
+            bitrate = 0;
             ergebnis = 0;
-            gesamtspur = 0;
+            zeit = 0;
+          
         }
-        public void setAudiospur(float audiospur, float videospur)
+        public void setBitrate(float audiospur, float videospur)
         {
-            this.Audiospur = audiospur;
-            this.Videospur = videospur;
+            
+            this.bitrate = videospur;
+            videospur = audiospur + videospur;
+     
             
         }
-        public void setgesamtzahl(float minuten, float sekunden)
+        public void setZeit(float minuten, float sekunden)
         {
-           // this.gesamtSpur = Gesamtspur;
-              gesamtspur= Audiospur+Videospur;
-            this.Minuten = minuten;
-            this.Sekunden = sekunden;
-            ergebnis = (Minuten * 60 + Sekunden)*gesamtspur;
-            ergebnis = ergebnis / 8;
-            ergebnis = ergebnis / 1024;
-            ergebnis = ergebnis / 1024;
-         
+            
+            this.Sekunden =zeit;
+            zeit = (minuten * 60 + sekunden);
+
+
         }
         public float getgesamtzahl()
         {
+        
+           float kib = Sekunden * bitrate;
+            float kb = kib / 8;
+            float mib = kb / 1024;
+            float gib = mib / 1024;
+            return gib;
             
-            return ergebnis;
+             
+
+            
         }
 
     }

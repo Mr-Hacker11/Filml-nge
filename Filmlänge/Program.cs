@@ -6,13 +6,13 @@ namespace Filmlänge
     {
         static void Main(string[] args)
         {
-            Film Spur = new Film();
-            Spur.setAudiospur(384, 8000);
-            Film Zeit= new Film();
-            Zeit.setgesamtzahl(90, 30);
-            Zeit.getgesamtzahl();
-            string Ausgabe = Zeit.ToString();
-            Console.WriteLine(Ausgabe+"Gib");
+            Film Informationgesamt = new Film();
+            Informationgesamt.setBitrate(384, 8000);
+            Informationgesamt.setZeit(90, 30);
+           float result =  Informationgesamt.getgesamtzahl();
+            
+            Console.WriteLine("Gib: " + result);
+            Console.ReadLine();
            
 
 
